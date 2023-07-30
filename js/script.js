@@ -64,7 +64,7 @@ reposList.addEventListener("click", function(e){
     }
 });
 
-/*---displays specific repo info that has been clicked on---*/
+/*---fetches language info for repo---*/
 const specificRepoInfo = async function (repoName){
     const fetchInfo = await fetch (
         `https://api.github.com/repos/${username}/${repoName}`
@@ -83,7 +83,7 @@ displayRepoInfo(repoInfo,languages);
 };
 
 
-
+/*---displays and creates div for repo--*/
 const displayRepoInfo = function(repoInfo,languages){
     individualRepo.innerHTML = "";
     individualRepo.classList.remove("hide");
